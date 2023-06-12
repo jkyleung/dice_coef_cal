@@ -110,10 +110,11 @@ class MainPanel(wx.Panel):
         nrrd_file_1 = self.file_dialog_text[0].GetValue()
         nrrd_file_2 = self.file_dialog_text[1].GetValue()
         model_npy_1, fileheader1 = nrrd.read(nrrd_file_1)   # index_order='C'
-        model_npy_1, fileheader1 = nrrd.read(nrrd_file_2)
+        model_npy_2, fileheader2 = nrrd.read(nrrd_file_2)
 
         ## calculate the DICE coef
         dice_coef_value = dice_coef.dice_coef_calculation(model_npy_1, model_npy_2)
+        print("DICE coef:", dice_coef_value)
         coef_arr.append(dice_coef_value)
 
         ## display the 3D model
@@ -126,7 +127,7 @@ class MainPanel(wx.Panel):
 
         # display the value
         for i, coef in enumerate(self.coef_value):
-            coef.SetLabel(coef_arr[i])
+            coef.SetLabel(str(coef_arr[i]))
         
         # wx.MessageBox("This is the message of finish.", "Message title", wx.OK|wx.ICON_INFORMATION)
 
