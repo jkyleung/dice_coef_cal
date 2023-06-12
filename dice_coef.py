@@ -43,9 +43,13 @@ def mesh_to_voxel_grid(mesh, num_sample_pt=NUM_SAMPLE_PT, v_size=VOXEL_SIZE, met
 
 def dice_coef_calculation(model1, model2):
     # only 0 or 1 value for each voxel
-    TP = np.where(model1==1 and model2==1, 1, 0)
-    FP = np.where(model1==1 and model2==0, 1, 0)
-    FN = np.where(model1==0 and model2==1, 1, 0)
+    TP_ = np.where((model1==1) & (model2==1), 1, 0)
+    FP_ = np.where((model1==1) & (model2==0), 1, 0)
+    FN_ = np.where((model1==0) & (model2==1), 1, 0)
+
+    TP = np.count_nonzero(TP_ == 1)
+    FP = np.count_nonzero(FP_ == 1)
+    FN = np.count_nonzero(FN_ == 1)
 
     dice_coef = (2 * TP) / (2 * TP + FP + FN)
 

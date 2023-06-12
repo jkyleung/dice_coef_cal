@@ -13,7 +13,7 @@ from ui.main_frame import *
 # constant
 APP_NAME = "Segmentation Comparison Application"
 VERSION = 'v0.1'
-WINDOW_SIZE = wx.Size(600,800)
+WINDOW_SIZE = wx.Size(600,600)
 
 def main():
     print("=============================")

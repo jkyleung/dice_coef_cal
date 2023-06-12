@@ -11,8 +11,9 @@ def main():
     packages = ['numpy',
         'matplotlib',
         'open3d',
-        'wxPython'.
-        'pynrrd']
+        'wxPython',
+        'pynrrd',
+        'typing-extensions']
     for pkg in packages:
         install(pkg)
 
