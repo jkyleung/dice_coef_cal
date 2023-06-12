@@ -1,1 +1,3 @@
-# dice_coef_cal
+## install
+python package_install.py
+python main.py
