@@ -1,3 +1,3 @@
 ## install
-python package_install.py
+python package_install.py <br />
 python main.py
